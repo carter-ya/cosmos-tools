@@ -1,18 +1,51 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.carterya.cosmostools</id>
-    <name>cosmos-tools</name>
-    <vendor>carter-ya</vendor>
+  <id>com.github.carter-ya</id>
+  <name>cosmos-tools</name>
+  <vendor>carter-ya</vendor>
 
-    <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.carterya.cosmostools.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.carterya.cosmostools.services.MyProjectService"/>
-    </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService
+      serviceImplementation="com.github.carter_ya.cosmostools.services.MyApplicationService"/>
+    <projectService
+      serviceImplementation="com.github.carter_ya.cosmostools.services.MyProjectService"/>
+  </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.carterya.cosmostools.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+  <applicationListeners>
+    <listener class="com.github.carter_ya.cosmostools.listeners.MyProjectManagerListener"
+      topic="com.intellij.openapi.project.ProjectManagerListener"/>
+  </applicationListeners>
+
+  <actions resource-bundle="messages.MyBundle">
+    <group id="com.github.carter_ya.cosmostools"
+      text="Cosmos SDK Tools"
+      popup="true">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <add-to-group group-id="EditorPopupMenu"
+        anchor="after"
+        relative-to-action="org.intellij.sdk.action.GroupedActions"/>
+      <group id="com.github.carter_ya.cosmostools.generator"
+        text="Generator"
+        popup="true">
+        <action class="com.github.carter_ya.cosmostools.action.ProtoGoAction"
+          id="com.github.carter_ya.cosmostools.action.ProtoGoAction"
+          text="Generate Go Types"
+          description="Generate go types for project">
+        </action>
+        <action class="com.github.carter_ya.cosmostools.action.ProtoOpenAPIAction"
+          id="com.github.carter_ya.cosmostools.action.ProtoOpenAPIAction"
+          text="Generate OpenAPI Spec"
+          description="Generate openAPI spec for project">
+        </action>
+        <separator/>
+        <action class="com.github.carter_ya.cosmostools.action.ProtoAllAction"
+          id="com.github.carter_ya.cosmostools.action.ProtoAllAction"
+          text="Generate All"
+          description="Generate all types for project">
+        </action>
+      </group>
+    </group>
+  </actions>
 </idea-plugin>

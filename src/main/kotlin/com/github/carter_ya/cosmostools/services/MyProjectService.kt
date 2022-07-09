@@ -1,7 +1,7 @@
-package com.github.carterya.cosmostools.services
+package com.github.carter_ya.cosmostools.services
 
 import com.intellij.openapi.project.Project
-import com.github.carterya.cosmostools.MyBundle
+import com.github.carter_ya.cosmostools.MyBundle
 
 class MyProjectService(project: Project) {
 

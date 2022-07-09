@@ -1,9 +1,9 @@
-package com.github.carterya.cosmostools.listeners
+package com.github.carter_ya.cosmostools.listeners
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener
-import com.github.carterya.cosmostools.services.MyProjectService
+import com.github.carter_ya.cosmostools.services.MyProjectService
 
 internal class MyProjectManagerListener : ProjectManagerListener {
 
