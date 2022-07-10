@@ -1,5 +1,6 @@
 package com.github.carter_ya.cosmostools.action;
 
+import com.github.carter_ya.cosmostools.Constants;
 import com.github.carter_ya.cosmostools.proto.ProtoGenerator;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
@@ -20,7 +21,7 @@ public class ProtoGoAction extends ProjectActivateAction {
 
         VirtualFile projectDir = ProjectUtil.guessProjectDir(project);
         if (projectDir == null) {
-            Messages.showErrorDialog(project, "Can't guess project dir!", "Cosmos Tools");
+            Messages.showErrorDialog(project, "Can't guess project dir!", Constants.PLUGIN_NAME);
             return;
         }
 

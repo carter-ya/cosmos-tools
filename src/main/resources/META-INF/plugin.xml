@@ -11,6 +11,8 @@
       serviceImplementation="com.github.carter_ya.cosmostools.services.MyApplicationService"/>
     <projectService
       serviceImplementation="com.github.carter_ya.cosmostools.services.MyProjectService"/>
+    <projectService
+      serviceImplementation="com.github.carter_ya.cosmostools.state.ChainServeState"/>
   </extensions>
 
   <applicationListeners>
@@ -26,7 +28,19 @@
       <add-to-group group-id="EditorPopupMenu"
         anchor="after"
         relative-to-action="org.intellij.sdk.action.GroupedActions"/>
-      <group id="com.github.carter_ya.cosmostools.generator"
+
+      <group id="CosmosSDKTools.Chain"
+        text="Chain"
+        popup="true">
+        <action class="com.github.carter_ya.cosmostools.action.ChainServeAction"
+          id="com.github.carter_ya.cosmostools.action.ChainServeAction"
+          text="Chain Serve"
+          description="Start a blockchain node with automatic reloading">
+        </action>
+      </group>
+
+
+      <group id="CosmosSDKTools.Generator"
         text="Generator"
         popup="true">
         <action class="com.github.carter_ya.cosmostools.action.ProtoGoAction"

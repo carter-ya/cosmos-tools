@@ -1,6 +1,7 @@
 package com.github.carter_ya.cosmostools.action;
 
 import com.github.carter_ya.cosmostools.AbstractGenerator;
+import com.github.carter_ya.cosmostools.Constants;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.actions.StopProcessAction;
 import com.intellij.execution.configurations.GeneralCommandLine;
@@ -30,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public abstract class ProjectActivateAction extends AnAction {
 
-    protected void restarter(AbstractGenerator generator, Project project) {
+    public static void restarter(AbstractGenerator generator, Project project) {
         GeneralCommandLine commandLine = generator.generate();
 
         ColoredProcessHandler processHandler;
@@ -61,7 +62,7 @@ public abstract class ProjectActivateAction extends AnAction {
             consoleView,
             processHandler,
             new JPanel(new BorderLayout()),
-            "Cosmos Tools"
+            Constants.PLUGIN_NAME
         );
         DefaultActionGroup actionGroup = new DefaultActionGroup();
         actionGroup.add(new RerunAction(() -> restarter(generator, project)));
@@ -70,7 +71,7 @@ public abstract class ProjectActivateAction extends AnAction {
         actionGroup.addAll(consoleView.createConsoleActions());
 
         ActionToolbar toolbar = ActionManager.getInstance()
-            .createActionToolbar("Cosmos Tools", actionGroup, false);
+            .createActionToolbar(Constants.PLUGIN_NAME, actionGroup, false);
         toolbar.setTargetComponent(consoleViewComponent);
 
         JComponent ui = descriptor.getComponent();
