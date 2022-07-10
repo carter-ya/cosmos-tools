@@ -1,8 +1,8 @@
 package com.github.carter_ya.cosmostools.gui;
 
-import com.github.carter_ya.cosmostools.ChainServeGenerator;
 import com.github.carter_ya.cosmostools.Constants;
 import com.github.carter_ya.cosmostools.action.ProjectActivateAction;
+import com.github.carter_ya.cosmostools.chain.ChainServeGenerator;
 import com.github.carter_ya.cosmostools.components.ChainServeForm;
 import com.github.carter_ya.cosmostools.state.ChainServeState;
 import com.intellij.openapi.components.ServiceManager;

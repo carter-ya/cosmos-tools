@@ -1,5 +1,6 @@
-package com.github.carter_ya.cosmostools;
+package com.github.carter_ya.cosmostools.chain;
 
+import com.github.carter_ya.cosmostools.AbstractGenerator;
 import com.intellij.execution.configurations.GeneralCommandLine;
 
 /**

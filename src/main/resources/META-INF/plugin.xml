@@ -37,6 +37,11 @@
           text="Chain Serve"
           description="Start a blockchain node with automatic reloading">
         </action>
+        <action class="com.github.carter_ya.cosmostools.action.ChainBuildAction"
+          id="com.github.carter_ya.cosmostools.action.ChainBuildAction"
+          text="Chain Build"
+          description="By default, build your node binaries and add the binaries to your $(go env GOPATH)/bin path.">
+        </action>
       </group>
 
 
